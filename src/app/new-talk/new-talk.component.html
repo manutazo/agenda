@@ -1,0 +1,14 @@
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit(form)">  
+
+  	<div *ngIf="!descriptionControl.valid && !descriptionControl.pristine">Description es invalido {{descriptionControl.errors | json}}</div>
+
+  	<div>
+    <label for="title">title of talk</label>
+    <input type="text" id="title" name="title"  [formControl]="descriptionControl" required>
+    </div>
+    <div>
+    <label form="description">description of talk</label>
+    <input type="text" id="description" name="description" [formControl]="userForm.controls.description" required minlength="30">
+    </div>
+    <button type="submit">Send</button>
+</form >
